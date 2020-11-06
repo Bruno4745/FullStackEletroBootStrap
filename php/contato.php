@@ -68,6 +68,7 @@
 			$result = $conn->query($sql);
 
 			if($result->num_rows > 0){
+				echo '<h4>Mensagens Enviadas:</h4>';
 				while($rows = $result->fetch_assoc()){
 					echo '<hr>Data: ', $rows['data'];
 					echo '<br>Nome: ', $rows['nome'];

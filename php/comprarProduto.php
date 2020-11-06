@@ -79,6 +79,24 @@
 			</div>
 		</div>
 
+		<?php
+			$sql = "SELECT * FROM pedidos;";
+			$result = $conn->query($sql);
+
+			if($result->num_rows > 0){
+				echo '<h4>Pedidos Realizados:</h4>';
+				while($rows = $result->fetch_assoc()){
+					echo '<hr>Nome: ', $rows['nome_cliente'];
+					echo '<br>Endereco: ', $rows['endereco'];
+					echo '<br>Telefone: ', $rows['telefone'];
+					echo '<br>Produto: ', $rows['nome_produto'];
+					echo '<br>Valor Unitario: ', $rows['valor_unit'];
+					echo '<br>Quantidade: ', $rows['quantidade'];
+					echo '<br>Valot Total: ', $rows['valor_total'];
+				}
+			}
+		?>
+
 		<footer id="rodape">
 			<?php
 				include_once('./include/rodape.html');
